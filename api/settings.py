@@ -116,6 +116,9 @@ EMAIL_HOST_USER = str(os.getenv('EMAIL_HOST_USER'))
 EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
 # ALLOWED_HOSTS = []
 
+PAYSTACK_SECRET_KEY = str(os.getenv('PAYSTACK_SECRET_KEY'))#hide keys
+PAYSTACK_PUBLIC_KEY = str(os.getenv('PAYSTACK_PUBLIC_KEY'))#hide keys
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',

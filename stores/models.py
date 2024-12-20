@@ -2,6 +2,9 @@ from django.db import models
 import uuid
 from users.models import Profile
 import secrets
+
+from . import Paystack
+
 # Create your models here.
 
 class Category(models.Model):
@@ -97,6 +100,7 @@ class Order(models.Model):
 #verifying payment on paystack
     def verify_payment(self):
         #paystack = paystack() --- using paystack module
+        paystack = Paystack()
         status,result = paystack.verify__payment(self.ref)
         if status and result.get('success') == 'success':
             # ensure the amount matches
